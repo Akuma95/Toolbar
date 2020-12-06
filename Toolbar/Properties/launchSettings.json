@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Toolbar": {
+      "commandName": "Project",
+      "nativeDebugging": false
+    }
+  }
+}

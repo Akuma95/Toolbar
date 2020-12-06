@@ -1,0 +1,268 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Toolbar.UserControll" x:Class="Toolbar.UserControll.UCToolbar" 
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800" Height="360">
+    <Grid HorizontalAlignment="Stretch" Width="800" Height="360">
+        <TabControl x:Name="tcAll" TabStripPlacement="Right" SelectionChanged="TabControl_SelectionChanged" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Height="370">
+            <TabItem Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}">
+                <TabItem.Header>
+                    <Image x:Name="imgSettings" Height="50" Width="50" Source="/UserControll/Settings.png" />
+                </TabItem.Header>
+                <Grid Background="#66A4A4A4">
+                    <TextBlock HorizontalAlignment="Left" Margin="10,18,0,0" Text="Bild zur Verfügung stellen:" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="Black"/>
+                    <DockPanel Margin="153,10,10,323" Height="30">
+                        <WrapPanel HorizontalAlignment="Stretch" DockPanel.Dock="Left" Margin="2,0,0,0" VerticalAlignment="Stretch" Orientation="Horizontal" Height="22">
+                            <Button x:Name="btnOpenFile" Click="btnOpenFile_Click" HorizontalContentAlignment="Center" Height="22" Width="70" VerticalAlignment="Top" Content="Bild"/>
+                        </WrapPanel>
+                        <TextBox Name="txtEditor" Width="492" Height="22" DockPanel.Dock="Right" />
+                    </DockPanel>
+                    <Button x:Name="btn_save_img" Content="Bild sichern" HorizontalAlignment="Center" Margin="0,46,0,0" VerticalAlignment="Top" Width="84" Height="26" Background="#FFB1D394" Click="btn_save_img_Click"/>
+                    <Rectangle HorizontalAlignment="Center" Height="1" Margin="0,80,0,0" Stroke="Black" VerticalAlignment="Top" Width="678" RenderTransformOrigin="0.5,0.5"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="10,86,0,0" Text="Games" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="Black" FontSize="17" FontWeight="Bold">
+                        <TextBlock.TextDecorations>
+                            <TextDecoration/>
+                        </TextBlock.TextDecorations>
+                    </TextBlock>
+                    <ComboBox x:Name="cb_Games" HorizontalAlignment="Left" Margin="10,135,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="CbSelectionChanged">
+                        <ComboBoxItem Content="btn_1"/>
+                        <ComboBoxItem Content="btn_2"/>
+                        <ComboBoxItem Content="btn_3"/>
+                        <ComboBoxItem Content="btn_4"/>
+                        <ComboBoxItem Content="btn_5"/>
+                        <ComboBoxItem Content="btn_6"/>
+                        <ComboBoxItem Content="btn_7"/>
+                        <ComboBoxItem Content="btn_8"/>
+                    </ComboBox>
+                    <TextBlock HorizontalAlignment="Left" Margin="10,114,0,0" Text="Welcher Button:" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="Black"/>
+                    <ComboBox x:Name="GameImg" HorizontalAlignment="Left" Margin="153,135,0,0" VerticalAlignment="Top" Width="120"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="153,114,0,0" Text="Welches Icon:" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="Black"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="305,114,0,0" Text="Welcher Pfad:" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="Black"/>
+                    <TextBox x:Name="GamePfad" HorizontalAlignment="Left" Margin="305,135,0,0" Text="Verknüpfung" TextWrapping="Wrap" VerticalAlignment="Top" Width="307" Height="22"/>
+                    <Rectangle HorizontalAlignment="Center" Height="1" Margin="0,174,0,0" Stroke="Black" VerticalAlignment="Top" Width="678" RenderTransformOrigin="0.5,0.5"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="10,184,0,0" Text="Programmierung" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="Black" FontSize="17" FontWeight="Bold">
+                        <TextBlock.TextDecorations>
+                            <TextDecoration/>
+                        </TextBlock.TextDecorations>
+                    </TextBlock>
+                    <ComboBox x:Name="cb_Programm" HorizontalAlignment="Left" Margin="10,233,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="CbSelectionChanged">
+                        <ComboBoxItem Content="btn_1"/>
+                        <ComboBoxItem Content="btn_2"/>
+                        <ComboBoxItem Content="btn_3"/>
+                        <ComboBoxItem Content="btn_4"/>
+                        <ComboBoxItem Content="btn_5"/>
+                        <ComboBoxItem Content="btn_6"/>
+                        <ComboBoxItem Content="btn_7"/>
+                        <ComboBoxItem Content="btn_8"/>
+                    </ComboBox>
+                    <TextBlock HorizontalAlignment="Left" Margin="10,212,0,0" Text="Welcher Button:" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="Black"/>
+                    <ComboBox x:Name="ProgrammImg" HorizontalAlignment="Left" Margin="153,233,0,0" VerticalAlignment="Top" Width="120"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="153,212,0,0" Text="Welches Icon:" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="Black"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="305,212,0,0" Text="Welcher Pfad:" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="Black"/>
+                    <TextBox x:Name="ProgrammPfad" HorizontalAlignment="Left" Margin="305,233,0,0" Text="Verknüpfung" TextWrapping="Wrap" VerticalAlignment="Top" Width="307" Height="22"/>
+                    <Button x:Name="safe_Games" Content="btn sichern" Click="btnSafe_click" HorizontalAlignment="Left" Margin="636,133,0,0" VerticalAlignment="Top" Width="84" Height="26" Background="#FFB1D394"/>
+                    <Button x:Name="safe_Programm" Content="btn sichern" Click="btnSafe_click" HorizontalAlignment="Left" Margin="636,226,0,0" VerticalAlignment="Top" Width="84" Height="26" Background="#FFB1D394"/>
+                    <Button x:Name="delete_Games" Content="btn löschen" Click="btnDelete_click" HorizontalAlignment="Left" Margin="636,97,0,0" VerticalAlignment="Top" Width="84" Height="26" Background="#FFD39494"/>
+                    <Button x:Name="delete_Programm" Content="btn sichern" Click="btnDelete_click" HorizontalAlignment="Left" Margin="636,195,0,0" VerticalAlignment="Top" Width="84" Height="26" Background="#FFD39494"/>
+                </Grid>
+            </TabItem>
+            <TabItem Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}">
+                <TabItem.Header>
+                    <Image x:Name="imgGames" Height="50" Width="50" Source="/UserControll/Games.png" />
+                </TabItem.Header>
+                <Grid>
+                    <DockPanel LastChildFill="False" Height="361" Margin="0,2,0,2">
+                        <DockPanel Height="180" VerticalAlignment="Top" DockPanel.Dock="Top">
+                            <Button x:Name="btn_games_1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="btn_programm_click" Margin="5,5,5,5" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FlowDirection="LeftToRight" Width="170" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}">
+                                <Button.OpacityMask>
+                                    <ImageBrush/>
+                                </Button.OpacityMask>
+                                <Image x:Name="img_games_1" Height="172" Width="170">
+                                    <Image.OpacityMask>
+                                        <ImageBrush ImageSource="/UserControll/Mask.png"/>
+                                    </Image.OpacityMask>
+                                </Image>
+                            </Button>
+                            <Button x:Name="btn_games_2" Click="btn_programm_click" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5,5,5,5" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FlowDirection="LeftToRight" UseLayoutRounding="False" Width="170" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}">
+                                <Button.OpacityMask>
+                                    <ImageBrush/>
+                                </Button.OpacityMask>
+                                <Image x:Name="img_games_2" Height="172" Width="170">
+                                    <Image.OpacityMask>
+                                        <ImageBrush ImageSource="/UserControll/Mask.png"/>
+                                    </Image.OpacityMask>
+                                </Image>
+                            </Button>
+                            <Button x:Name="btn_games_3" Click="btn_programm_click" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5,5,5,5" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FlowDirection="LeftToRight" UseLayoutRounding="False" Width="170" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}">
+                                <Button.OpacityMask>
+                                    <ImageBrush/>
+                                </Button.OpacityMask>
+                                <Image x:Name="img_games_3" Height="172" Width="170">
+                                    <Image.OpacityMask>
+                                        <ImageBrush ImageSource="/UserControll/Mask.png"/>
+                                    </Image.OpacityMask>
+                                </Image>
+                            </Button>
+                            <Button x:Name="btn_games_4" Click="btn_programm_click" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5,5,5,5" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FlowDirection="LeftToRight" UseLayoutRounding="False" Width="170" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}">
+                                <Button.OpacityMask>
+                                    <ImageBrush/>
+                                </Button.OpacityMask>
+                                <Image x:Name="img_games_4" Height="172" Width="170">
+                                    <Image.OpacityMask>
+                                        <ImageBrush ImageSource="/UserControll/Mask.png"/>
+                                    </Image.OpacityMask>
+                                </Image>
+                            </Button>
+                        </DockPanel>
+                        <DockPanel Height="180" VerticalAlignment="Bottom" HorizontalAlignment="Stretch" DockPanel.Dock="Bottom">
+                            <Button x:Name="btn_games_5" Click="btn_programm_click" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5,5,5,5" Width="170" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}">
+                                <Button.OpacityMask>
+                                    <ImageBrush/>
+                                </Button.OpacityMask>
+                                <Image x:Name="img_games_5" Height="172" Width="170">
+                                    <Image.OpacityMask>
+                                        <ImageBrush ImageSource="/UserControll/Mask.png"/>
+                                    </Image.OpacityMask>
+                                </Image>
+                            </Button>
+                            <Button x:Name="btn_games_6" Click="btn_programm_click" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5,5,5,5" Width="170" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}">
+                                <Button.OpacityMask>
+                                    <ImageBrush/>
+                                </Button.OpacityMask>
+                                <Image x:Name="img_games_6" Height="172" Width="170">
+                                    <Image.OpacityMask>
+                                        <ImageBrush ImageSource="/UserControll/Mask.png"/>
+                                    </Image.OpacityMask>
+                                </Image>
+                            </Button>
+                            <Button x:Name="btn_games_7" Click="btn_programm_click" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5,5,5,5" Width="170" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}">
+                                <Button.OpacityMask>
+                                    <ImageBrush/>
+                                </Button.OpacityMask>
+                                <Image x:Name="img_games_7" Height="172" Width="170">
+                                    <Image.OpacityMask>
+                                        <ImageBrush ImageSource="/UserControll/Mask.png"/>
+                                    </Image.OpacityMask>
+                                </Image>
+                            </Button>
+                            <Button x:Name="btn_games_8" Click="btn_programm_click" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5,5,5,5" Width="170" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}">
+                                <Button.OpacityMask>
+                                    <ImageBrush/>
+                                </Button.OpacityMask>
+                                <Image x:Name="img_games_8" Height="172" Width="170">
+                                    <Image.OpacityMask>
+                                        <ImageBrush ImageSource="/UserControll/Mask.png"/>
+                                    </Image.OpacityMask>
+                                </Image>
+                            </Button>
+                        </DockPanel>
+                    </DockPanel>
+                </Grid>
+            </TabItem>
+            <TabItem Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}">
+                <TabItem.Header>
+                    <Image x:Name="imgProgramming" Height="50" Width="50" Source="/UserControll/Programmieren.png" />
+                </TabItem.Header>
+                <Grid>
+                    <DockPanel LastChildFill="False" Height="361">
+                        <DockPanel Height="180" VerticalAlignment="Top" DockPanel.Dock="Top">
+                            <Button x:Name="btn_programm_1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="btn_programm_click" Margin="5,5,5,5" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FlowDirection="LeftToRight" Width="170" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}">
+                                <Button.OpacityMask>
+                                    <ImageBrush ImageSource="/UserControll/Mask.png"/>
+                                </Button.OpacityMask>
+                                <Image x:Name="img_programm_1" Height="170" Width="170" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Source="/UserControll/visualStudio2019.jpg">
+                                    <Image.OpacityMask>
+                                        <ImageBrush ImageSource="/UserControll/Mask.png"/>
+                                    </Image.OpacityMask>
+                                </Image>
+                            </Button>
+                            <Button x:Name="btn_programm_2" Click="btn_programm_click" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5,5,5,5" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FlowDirection="LeftToRight" UseLayoutRounding="False" Width="170" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}">
+                                <Button.OpacityMask>
+                                    <ImageBrush ImageSource="/UserControll/Mask.png"/>
+                                </Button.OpacityMask>
+                                <Image x:Name="img_programm_2" Height="170" Width="170" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                                    <Image.OpacityMask>
+                                        <ImageBrush ImageSource="/UserControll/Mask.png"/>
+                                    </Image.OpacityMask>
+                                </Image>
+                            </Button>
+                            <Button x:Name="btn_programm_3" Click="btn_programm_click" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5,5,5,5" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FlowDirection="LeftToRight" UseLayoutRounding="False" Width="170" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}">
+                                <Button.OpacityMask>
+                                    <ImageBrush ImageSource="/UserControll/Mask.png"/>
+                                </Button.OpacityMask>
+                                <Image x:Name="img_programm_3" Height="170" Width="170" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                                    <Image.OpacityMask>
+                                        <ImageBrush ImageSource="/UserControll/Mask.png"/>
+                                    </Image.OpacityMask>
+                                </Image>
+                            </Button>
+                            <Button x:Name="btn_programm_4" Click="btn_programm_click" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5,5,5,5" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FlowDirection="LeftToRight" UseLayoutRounding="False" Width="170" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}">
+                                <Button.OpacityMask>
+                                    <ImageBrush ImageSource="/UserControll/Mask.png"/>
+                                </Button.OpacityMask>
+                                <Image x:Name="img_programm_4" Height="170" Width="170" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                                    <Image.OpacityMask>
+                                        <ImageBrush ImageSource="/UserControll/Mask.png"/>
+                                    </Image.OpacityMask>
+                                </Image>
+                            </Button>
+                        </DockPanel>
+                        <DockPanel Height="180" VerticalAlignment="Bottom" HorizontalAlignment="Stretch" DockPanel.Dock="Bottom">
+                            <Button x:Name="btn_programm_5" Click="btn_programm_click" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5,5,5,5" Width="170" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}">
+                                <Button.OpacityMask>
+                                    <ImageBrush ImageSource="/UserControll/Mask.png"/>
+                                </Button.OpacityMask>
+                                <Image x:Name="img_programm_5" Height="170" Width="170" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                                    <Image.OpacityMask>
+                                        <ImageBrush ImageSource="/UserControll/Mask.png"/>
+                                    </Image.OpacityMask>
+                                </Image>
+                            </Button>
+                            <Button x:Name="btn_programm_6" Click="btn_programm_click" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5,5,5,5" Width="170" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}">
+                                <Button.OpacityMask>
+                                    <ImageBrush ImageSource="/UserControll/Mask.png"/>
+                                </Button.OpacityMask>
+                                <Image x:Name="img_programm_6" Height="170" Width="170" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                                    <Image.OpacityMask>
+                                        <ImageBrush ImageSource="/UserControll/Mask.png"/>
+                                    </Image.OpacityMask>
+                                </Image>
+                            </Button>
+                            <Button x:Name="btn_programm_7" Click="btn_programm_click" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5,5,5,5" Width="170" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}">
+                                <Button.OpacityMask>
+                                    <ImageBrush ImageSource="/UserControll/Mask.png"/>
+                                </Button.OpacityMask>
+                                <Image x:Name="img_programm_7" Height="170" Width="170" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                                    <Image.OpacityMask>
+                                        <ImageBrush ImageSource="/UserControll/Mask.png"/>
+                                    </Image.OpacityMask>
+                                </Image>
+                            </Button>
+                            <Button x:Name="btn_programm_8" Click="btn_programm_click" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5,5,5,5" Width="170" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}">
+                                <Button.OpacityMask>
+                                    <ImageBrush ImageSource="/UserControll/Mask.png"/>
+                                </Button.OpacityMask>
+                                <Image x:Name="img_programm_8" Height="170" Width="170" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                                    <Image.OpacityMask>
+                                        <ImageBrush ImageSource="/UserControll/Mask.png"/>
+                                    </Image.OpacityMask>
+                                </Image>
+                            </Button>
+                        </DockPanel>
+                    </DockPanel>
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="TIClose" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Margin="0,-2,-2,-2">
+                <TabItem.Header>
+                    <Image x:Name="imgClose" Height="50" Width="50" Source="/UserControll/Close.png" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" />
+                </TabItem.Header>
+                <Grid/>
+            </TabItem>
+        </TabControl>
+
+
+    </Grid>
+</UserControl>

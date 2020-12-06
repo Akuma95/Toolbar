@@ -1,0 +1,101 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <ApplicationIcon>favicon.ico</ApplicationIcon>
+    <SignAssembly>false</SignAssembly>
+    <Configurations>Debug;Release;Test</Configurations>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Test|AnyCPU'">
+    <DefineConstants>TRACE</DefineConstants>
+    <NoWarn>0168</NoWarn>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <OutputPath>C:\Users\Akuma\Desktop\Toolbar\</OutputPath>
+    <NoWarn>0168</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="UserControll\Close.png" />
+    <None Remove="UserControll\Games.png" />
+    <None Remove="UserControll\immortals.jpg" />
+    <None Remove="UserControll\legion.jpg" />
+    <None Remove="UserControll\Mask.png" />
+    <None Remove="UserControll\Programmieren.png" />
+    <None Remove="UserControll\Settings.png" />
+    <None Remove="UserControll\visualStudio2019.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Bilder\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="UserControll\Close.png" />
+    <Resource Include="UserControll\Games.png" />
+    <Resource Include="UserControll\immortals.jpg" />
+    <Resource Include="UserControll\legion.jpg" />
+    <Resource Include="UserControll\Mask.png" />
+    <Resource Include="UserControll\Programmieren.png" />
+    <Resource Include="UserControll\Settings.png" />
+    <Resource Include="UserControll\visualStudio2019.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="PfadeDataSet.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>PfadeDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Update="Properties\Settings.Designer.cs">
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Update="SQL\PfadeDataSet.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>PfadeDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="PfadeDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PfadeDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="SQL\PfadeDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PfadeDataSet.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+
+</Project>
